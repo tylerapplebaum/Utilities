@@ -1,3 +1,7 @@
+########UNIX datetime bs
+[DateTimeOffset]::FromUnixTimeSeconds(1111000011) | Select -ExpandProperty DateTime
+######
+
 $test = [System.Text.Encoding]::UTF8.GetBytes("hello") | %{ [System.Convert]::ToString($_,2).PadLeft(8,'0') }
 $key = "00000001"
 $bin = $test
