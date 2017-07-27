@@ -17,7 +17,7 @@ for($i=0; $i -lt $bytes.count ; $i++)
 
 
 
-$teststr64 = [System.Text.Encoding]::UTF8.GetBytes($String) | %{ [System.Convert]::ToBase64String($_)} #Converts string to byte array, then b64
+$teststr64 = [System.Text.Encoding]::UTF8.GetBytes($String) | %{ [System.Convert]::ToBase64String($_)} #Converts string to byte array, then b64 array
 $fromtest64 = [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String($teststr64)) #Converts b64string to UTF-8 string
 $fromtest64bytes = [System.Text.Encoding]::UTF8.GetBytes([System.Convert]::FromBase64String($testbytes64)) #Converts b64string to byte array
 $byteout = [System.Text.Encoding]::UTF8.GetString($fromtest64bytes) #Converts byte array to byte value
