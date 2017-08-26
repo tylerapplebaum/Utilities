@@ -1,0 +1,6 @@
+PS C:\Windows\system32> .\sc.exe create SleepService binPath="C:\Temp\sleepservice.exe" DisplayName="SleepService" start=auto
+[SC] CreateService SUCCESS
+
+PS C:\Windows\system32> .\sc.exe delete SleepService
+[SC] DeleteService SUCCESS
+
