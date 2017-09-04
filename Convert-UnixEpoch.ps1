@@ -10,7 +10,13 @@ Convert-FromUnixEpoch 1000198000
         [string]$EpochTime
 	)
 	[datetime]$Origin = '1970-01-01 00:00:00'
-	$GregorianTime = $Origin.AddSeconds($EpochTime)
+	If ($EpochTime.length -le 10) {
+		$GregorianTime = $Origin.AddSeconds($EpochTime)
+	}
+	Else {
+		Write-Verbose "Assuming millisecond timestamp"
+		$GregorianTime = $Origin.AddMilliSeconds($EpochTime)
+	}
 	Return $GregorianTime
 }
 
