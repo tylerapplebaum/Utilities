@@ -10,4 +10,4 @@ $ProcessedURL = [System.Web.HttpUtility]::UrlDecode($URL)
 		$ProcessedURL = [System.Web.HttpUtility]::UrlEncode($URL)
 	}
 Return $ProcessedURL
-}
+} #End Get-URL
