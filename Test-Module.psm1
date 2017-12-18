@@ -41,6 +41,22 @@ $Hash = $StringBuilder.ToString()
 Return $Hash
 } #End Get-StringHash
 
+Function Get-URL {
+[CmdletBinding()]
+param (
+	[string]$URL,
+	[switch]$Encode
+)
+[void][Reflection.Assembly]::LoadWithPartialName("System.Web")
+$ProcessedURL = [System.Web.HttpUtility]::UrlDecode($URL)
+	If ($PSBoundParameters.Encode) {
+		$ProcessedURL = [System.Web.HttpUtility]::UrlEncode($URL)
+	}
+Return $ProcessedURL
+} #End Get-URL
+
+
 Export-ModuleMember ConvertTo-Base64
 Export-ModuleMember ConvertFrom-Base64
 Export-ModuleMember Get-StringHash
+Export-ModuleMember Get-URL
