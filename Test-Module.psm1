@@ -9,7 +9,7 @@ $StringToByteArr = [System.Text.Encoding]::UTF8.GetBytes($String) #Converts stri
 $Base64String = [System.Convert]::ToBase64String($StringToByteArr) #Converts byte array to b64 string
 
 Return $Base64String
-} #End Convert-ToBase64
+} #End ConvertTo-Base64
 
 Function ConvertFrom-Base64 {
 param(
@@ -21,7 +21,7 @@ param(
 $Base64ToUTF8 = [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String($String)) #Converts b64 string to UTF-8 string
 
 Return $Base64ToUTF8
-}
+} #End ConvertFrom-Base64
 
 Function Get-StringHash {
 param(
