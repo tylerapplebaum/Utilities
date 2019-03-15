@@ -1,4 +1,4 @@
-function ConvertFrom-UnixEpoch {
+Function ConvertFrom-UnixEpoch {
 <#
 .EXAMPLE
 ConvertFrom-UnixEpoch 1000198000
@@ -33,7 +33,7 @@ ConvertFrom-UnixEpoch 1552647118967
 	Return $GregorianTime
 }
 
-function ConvertTo-UnixEpoch {
+Function ConvertTo-UnixEpoch {
 <#
 .EXAMPLE
 ConvertTo-UnixEpoch $(Get-Date)
