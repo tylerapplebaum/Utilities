@@ -1,10 +1,10 @@
 function ConvertFrom-UnixEpoch {
 <#
 .EXAMPLE
-Convert-FromUnixEpoch 1000198000
+ConvertFrom-UnixEpoch 1000198000
 
 .EXAMPLE
-Convert-FromUnixEpoch 1552647118967
+ConvertFrom-UnixEpoch 1552647118967
 #>
 [CmdletBinding()]
     param(
@@ -36,13 +36,13 @@ Convert-FromUnixEpoch 1552647118967
 function ConvertTo-UnixEpoch {
 <#
 .EXAMPLE
-Convert-ToUnixEpoch $(Get-Date)
+ConvertTo-UnixEpoch $(Get-Date)
 
 .EXAMPLE
-Convert-ToUnixEpoch "Tuesday, September 11, 2001 8:46:40 AM"
+ConvertTo-UnixEpoch "Tuesday, September 11, 2001 8:46:40 AM"
 
 .EXAMPLE
-Convert-ToUnixEpoch "March 5 2018"
+ConvertTo-UnixEpoch "March 5 2018"
 #>
 [CmdletBinding()]
     param(
