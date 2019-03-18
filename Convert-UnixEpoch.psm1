@@ -24,7 +24,7 @@ ConvertFrom-UnixEpoch 1552647118967
     
     ElseIf ($EpochTime.length -eq 16) { #Microseconds case
         Write-Verbose "Assuming usec timestamp because $($EpochTime.length) digit timestamp provided"
-        $EpochUsecToMsec = [Math]::Floor([decimal]($EpochTime / 1000))
+        $EpochUsecToMsec = [Math]::Floor([decimal]($EpochTime / 1000)) #Convert to milliseconds, round down any decimal
         $GregorianTime = $Origin.AddMilliSeconds($EpochUsecToMsec)
     }
     Else { #Try it anyway, get an error.
