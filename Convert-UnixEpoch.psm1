@@ -8,11 +8,11 @@ ConvertFrom-UnixEpoch 1552647118967
 #>
 [CmdletBinding()]
     param(
-		[Parameter(Mandatory, ValueFromPipeline, HelpMessage="Specify the UNIX epoch time")]
-		[Alias("t")]
+        [Parameter(Mandatory, ValueFromPipeline, HelpMessage="Specify the UNIX epoch time")]
+        [Alias("t")]
         [string]$EpochTime
-	)
-	[datetime]$Origin = '1970-01-01 00:00:00'
+    )
+    [datetime]$Origin = '1970-01-01 00:00:00'
     If ($EpochTime.length -le 10) { #Seconds case
         $GregorianTime = $Origin.AddSeconds($EpochTime)
     }
@@ -30,7 +30,7 @@ ConvertFrom-UnixEpoch 1552647118967
     Else { #Try it anyway, get an error.
         $GregorianTime = $Origin.AddMilliSeconds($EpochTime)
     }
-	Return $GregorianTime
+    Return $GregorianTime
 }
 
 Function ConvertTo-UnixEpoch {
@@ -46,10 +46,10 @@ ConvertTo-UnixEpoch "March 5 2018"
 #>
 [CmdletBinding()]
     param(
-		[Parameter(Mandatory,ValueFromPipeline)]
+        [Parameter(Mandatory,ValueFromPipeline)]
         [datetime]$Time
-	)
-	[datetime]$Origin = '1970-01-01 00:00:00'
-	[Long]$EpochTime = (New-TimeSpan -Start $Origin -End $Time).TotalSeconds
-	Return $EpochTime
+    )
+    [datetime]$Origin = '1970-01-01 00:00:00'
+    [Long]$EpochTime = (New-TimeSpan -Start $Origin -End $Time).TotalSeconds
+    Return $EpochTime
 }
