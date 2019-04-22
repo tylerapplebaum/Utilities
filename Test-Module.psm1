@@ -44,7 +44,7 @@ Return $Hash
 Function Get-URL {
 [CmdletBinding()]
 param (
-	[string]$URL,
+	$URL,
 	[switch]$Encode
 )
 [void][Reflection.Assembly]::LoadWithPartialName("System.Web")
