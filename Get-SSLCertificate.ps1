@@ -13,6 +13,7 @@ Process {
     Write-Verbose "$Computer`: Connecting on port $Port"
     [Net.ServicePointManager]::ServerCertificateValidationCallback = {$True}
     $Req = [Net.HttpWebRequest]::Create("https://$Computer`:$Port/")
+    $Req.KeppAlive = $False
     $Req.Timeout = $Timeoutms
     
     Try {
