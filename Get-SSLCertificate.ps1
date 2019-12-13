@@ -11,7 +11,7 @@ param(
 Process { 
     ForEach ($Computer in $ComputerName) {
     Write-Verbose "$Computer`: Connecting on port $Port"
-    [Net.ServicePointManager]::ServerCertificateValidationCallback = {$true}
+    [Net.ServicePointManager]::ServerCertificateValidationCallback = {$True}
     $Req = [Net.HttpWebRequest]::Create("https://$Computer`:$Port/")
     $Req.Timeout = $Timeoutms
     
@@ -22,7 +22,7 @@ Process {
         Continue
     }
     
-    If (!($req.ServicePoint.Certificate)) {
+    If (!($Req.ServicePoint.Certificate)) {
         Write-Error "No Certificate returned from $Computer"
         Continue
     }
