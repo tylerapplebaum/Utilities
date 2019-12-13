@@ -8,7 +8,6 @@ param(
         [int]$Timeoutms=3000
 )
 
-
 process { 
     ForEach ($Computer in $ComputerName) {
     Write-Verbose "$computer`: Connecting on port $Port"
