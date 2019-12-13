@@ -8,11 +8,11 @@ param(
         [int]$Timeoutms=3000
 )
 
-process { 
+Process { 
     ForEach ($Computer in $ComputerName) {
-    Write-Verbose "$computer`: Connecting on port $Port"
+    Write-Verbose "$Computer`: Connecting on port $Port"
     [Net.ServicePointManager]::ServerCertificateValidationCallback = {$true}
-    $Req = [Net.HttpWebRequest]::Create("https://$computer`:$port/")
+    $Req = [Net.HttpWebRequest]::Create("https://$Computer`:$Port/")
     $Req.Timeout = $Timeoutms
     
     Try {
